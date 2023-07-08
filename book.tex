@@ -1,0 +1,36 @@
+% LaTeX source for ``Summary of Quantum Chemistry''
+% Copyright (c) 2023 รังสิมันต์ เกษแก้ว (Rangsiman Ketkaew).
+
+% License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
+% https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+\documentclass[a4paper,12pt,twoside,openany]{extbook}
+
+\input{book_style}
+
+%% Avoid create page after chapter
+\let\cleardoublepage\clearpage
+% \let\clearpage\relax
+
+% Book metadata
+\title{สรุปเคมีควอนตัม}
+\author{รังสิมันต์ เกษแก้ว}
+
+\begin{document}
+
+\newpage
+% empty page
+\pagenumbering{gobble}
+\newpage
+
+\frontmatter
+\include{front_matter/cover_front_inside}
+
+\pagestyle{fancy} % Add header from this page on
+
+\mainmatter
+
+\include{chapter/01}
+\include{chapter/02}
+
+\end{document}

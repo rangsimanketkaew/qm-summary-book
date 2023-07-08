@@ -1,0 +1,209 @@
+% LaTeX source for ``Summary of Quantum Chemistry''
+% Copyright (c) 2023 รังสิมันต์ เกษแก้ว (Rangsiman Ketkaew).
+
+% License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
+% https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+\usepackage[
+    width=5.7in,
+    height=8.7in,
+    hmarginratio=3:2,
+    vmarginratio=1:1
+]{geometry}
+
+% Adjust size of the body text
+\AtBeginDocument{\fontsize{12}{13.889}\selectfont}
+% \AtBeginDocument{\fontsize{14}{16.2}\selectfont}
+
+% Encoded https://tex.stackexchange.com/a/44699/117615
+\usepackage[T1]{fontenc}
+% inputenc can be omitted if the file is already UTF-8 encoded
+% \usepackage[utf8]{inputenc} 
+\usepackage{textcomp}
+% \usepackage{url}
+\usepackage{xurl} % Use this package instead of url as it can break line
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{booktabs}  % For nicely typeset tabular material
+\usepackage{makecell}
+\usepackage{multirow}  % For multple rows table
+\usepackage{changepage}  % For wide tables
+\usepackage{threeparttable}  % For wide tables
+\usepackage{wrapfig} % wrapping text around figure
+\usepackage[perpage]{footmisc} % reset footnote counter each page
+\usepackage{alertmessage} % alert box
+\usepackage{pdfpages} % for adding PDF pages
+\usepackage{titlesec} % change size of title of section, subsection, ...
+\usepackage{framed}
+\usepackage{fancyvrb} % frame around verbatim
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{breqn}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{chemmacros}
+\usepackage{chemformula}
+\usepackage{modiagram}
+\usepackage{bm} % for \bm{}
+\usepackage[chapter]{algorithm}
+\usepackage{algpseudocode}
+% \usepackage{exercise}
+\usepackage[version=3]{mhchem}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage[begintext=``, endtext='']{quoting} % make sure that \blockquote has quotation marks
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{hyphenat}
+\usepackage[bookmarks,breaklinks]{hyperref}
+% import lstlisting setting
+\input{lstlisting.tex}
+
+% Avoid conflict between physics and siunitx
+% Sadly, this is error for Linux
+% \AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% Table of Contents
+\usepackage{tocloft}
+\renewcommand{\contentsname}{\hspace*{\fill}\bfseries\huge สารบัญ\hspace*{\fill}}
+\setcounter{tocdepth}{1} % Level of TOC
+% https://tex.stackexchange.com/a/397486/117615
+\renewcommand\cftchappresnum{บทที่ }
+\renewcommand\cftchapafterpnum{\vskip10pt}
+\newlength\mylen
+\settowidth\mylen{\bfseries บทที่ :\hspace{3em}}
+\cftsetindents{chap}{0pt}{\mylen}
+
+\renewcommand\cftsecafterpnum{\vskip10pt}
+\renewcommand\cftsubsecafterpnum{\vskip10pt}
+
+% space between number and text in TOC
+\advance\cftsecnumwidth 0.5em\relax
+\advance\cftsubsecindent 0.5em\relax
+\advance\cftsubsecnumwidth 0.5em\relax
+
+% Header
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE,RO]{\textbf{\thepage}}
+\fancyhead[RE,LO]{\textbf{\leftmark}}
+\setlength{\headheight}{16.81pt}
+
+% Part
+\renewcommand\thepart{\arabic{part}}
+
+% Chapter
+\renewcommand{\partname}{ส่วนที่}
+\renewcommand{\chaptername}{บทที่}
+
+% Section & Subsection
+\usepackage{float} % for [H] option
+
+% Appendix
+\usepackage[toc,page]{appendix}
+\renewcommand{\appendixname}{ภาคผนวก}
+\renewcommand{\appendixtocname}{ภาคผนวก}
+\renewcommand{\appendixpagename}{ภาคผนวก}
+
+% Text
+\newcommand{\bful}[1]{\textbf{\underline{#1}}}
+\newcommand{\ih}[1]{\inlinehighlight{#1}}
+
+% Figure & Table Captions
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=centering,singlelinecheck=off}
+\captionsetup[figure]{name={ภาพ}}
+\captionsetup[table]{name={ตาราง}}
+
+% Paragraph
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\titleformat*{\paragraph}{\large\bfseries} % Change size of paragraph title
+
+% Equation
+\counterwithin{equation}{chapter}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}} % define \numberthis for align*
+% change equation numbering format
+% {chapter}.{section}.{no. of equation}
+\numberwithin{equation}{section} 
+
+% Indices
+\usepackage{imakeidx}
+\makeindex
+\makeindex[name=th,title={ดรรชนีภาษาไทย}]
+\makeindex[name=en,title={ดรรชนีภาษาอังกฤษ}]
+\newcommand{\idxth}[1]{\index[th]{#1}}
+\newcommand{\idxen}[1]{\index[en]{#1}}
+\newcommand{\idxboth}[2]{\index[th]{#1}\index[en]{#2}}
+
+% URL font
+\urlstyle{same} % use the same font as main font
+
+%----------------------------------------------------
+
+%%% Option 1. Font for Thai %%%
+
+\usepackage{xltxtra} % this will load the fontspec, metalogo, and realscripts packages
+% \usepackage{xunicode}
+\XeTeXlinebreaklocale "th_TH"
+\XeTeXlinebreakskip = 0pt plus 1pt  
+\defaultfontfeatures{Scale=1.23}
+% \setmainfont{TH Sarabun New}
+\setmainfont[
+  ExternalLocation=font/,
+  Renderer=Basic,
+  BoldFont={THSarabunNew_Bold.ttf},
+  ItalicFont={THSarabunNew_Italic.ttf},
+  BoldItalicFont={THSarabunNew_BoldItalic.ttf},
+  Mapping=tex-text,
+]{THSarabunNew.ttf} 
+
+%%% Option 2. Fonts for different languages %%%
+% Fonts need to be installed on the system
+
+% \usepackage{fontspec,xunicode}
+% \defaultfontfeatures{Mapping=tex-text}
+% \setmainfont[Renderer=Basic, Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
+% \setmathrm[Renderer=Basic, Scale=0.90]{TeX Gyre Pagella}
+% \setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros} 
+% \setmonofont[Renderer=Basic]{TeX Gyre Cursor}
+% \newfontfamily{\thaifont}{TH Sarabun New}[Scale=MatchLowercase] 
+
+% \usepackage[Latin, Thai]{ucharclasses}
+% \setTransitionTo{Thai}{\thaifont}
+% \setTransitionFrom{Thai}{\normalfont}
+
+% \XeTeXlinebreaklocale "th_TH"
+% \XeTeXlinebreakskip = 0pt plus 1pt  
+
+% \defaultfontfeatures{Scale=1.23}
+
+%----------------------------------------------------
+
+% Defined commands
+\usepackage{xspace} 
+\newcommand{\cpp}{C\texttt{++}\xspace}
+
+% Bibliography
+\usepackage[
+  backend=bibtex,
+  autocite=superscript,
+  sorting=none,
+  style=numeric, 
+  natbib=true,
+  mincitenames=1,
+  doi=false,
+  url=false, 
+  isbn=false,
+  backref=true
+]{biblatex}
+% \addbibresource{references.bib}
+
+\renewcommand*{\bibfont}{\fontsize{14}{16.2}\selectfont}
