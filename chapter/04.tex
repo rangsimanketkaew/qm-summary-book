@@ -1,0 +1,78 @@
+% LaTeX source for ``Summary of Quantum Chemistry''
+% Copyright (c) 2023 รังสิมันต์ เกษแก้ว (Rangsiman Ketkaew).
+
+\chapter{Density Functional Theory}
+
+\section{เกริ่นนำ}
+
+ทฤษฎีทางเคมีควอนตัมแบบดังเดิม (traditional quantum chemical methods) นั้นจะทำการจัดกับ
+wavefunction โดยการ represent ด้วยฟังก์ชันแบบต่าง ๆ แล้วก็หาคำตอบของ correlation energy
+ออกมาซึ่งมีความสิ้นเปลืองในเชิงการคำนวณสูงมากเพราะว่ามีขั้นตอนต่าง ๆ ที่ซับซ้อนและแทบจะนำไปใช้จริง%
+ไม่ได้เลยกับระบบที่มีขนาดใหญ่
+
+Density Functional Theory (DFT) หรือทฤษฎีฟังก์ชันแนลความหนาแน่นนั้นแตกต่างออกไป
+ตัว DFT เองนั้นใช้แนวคิดที่ไม่ได้ผูกกับ wavefunction ตามที่เราได้ศึกษากันมาในที่แล้วอีกต่อไป
+โดยมีหัวใจหลักก็คือจะมองว่า \enquote{พลังงานของระบบที่สภาวะพื้นนั้นจะขึ้นอยู่กับความหนาแน่น%
+    ของอิเล็กตรอนเพียงเดียวเท่านั้น}
+
+\begin{equation}
+    \Psi(r_{1}, r_{2}, \dots, r_{N}) \rightarrow \Psi[\rho(r)]
+\end{equation}
+
+ซึ่ง wavefunction ในเวอร์ชันของ DFT นั้นง่ายกว่า wavefunction จริง ๆ เยอะเลย
+แต่ปัญหาก็คือว่าเราไม่รู้สมการที่จะแก้ wavefunction อันนี้ออกมาได้ ไอเดียอันนี้เริ่มต้นมาจาก
+Kohn, Hohenberg และ Sham (ตามปี ค.ศ. ที่ตีพิมพ์เปเปอร์ 1963, 1694) แล้วก็ทำให้วิธี
+DFT นั้นได้รางวัลโนเบลสาขาเคมีในปี 1998\footnote{วิธี DFT ได้รางวัลโนเบลเพราะว่าไอเดียของวิธี
+    ไม่ใช่ความแม่นยำของวิธีเพราะว่ายังมีวิธีอื่น ๆ อีกเยอะแยะมากมายที่แม่นยำกว่าวิธี DFT แต่เป็นเพราะว่า%
+    มีคนนำไปใช้งานเยอะและใช้งานได้จริงกับระบบโมเลกุลตั้งแต่ขนาดเล็กไปจนถึงขนาดใหญ่เพราะว่าใช้เวลา%
+    ในการคำนวณเร็วกว่าวิธีอื่น ๆ} แม้ว่าเราจะไม่รู้สมการที่ถูกต้องจริง ๆ ในการแก้ Kohn-Sham wavefunction
+แต่ว่าเราก็มีการสร้าง approximation ขึ้นมา โดย Kohn กับ Sham ได้พิสูจน์และพบว่าเพียงแค่เราใช้
+wavefunction ที่เป็น single Slater determinant มารวมกับสิ่งที่เรียกว่า Exchange-Correlation
+นั้นก็ให้ค่าผลการคำนวณที่ถูกต้องแล้ว
+
+พาร์ทที่น่าสนใจและเป็นปัญหามากที่สุดมาจนถึงปัจจุบันนี้ก็คือ Exchange-Correlation energy เพราะว่า ณ
+ปัจจุบันนี้ยังไม่มีใครสามารถหาหน้าตาที่เป็น exact solution ของเทอม XC นี้ได้ ซึ่งฟังก์ชันนอล XC
+ที่มีให้เราเลือกใช้กันตามโปรแกรมเคมีคำนวณต่าง ๆ ในปัจจุบันนี้เป็นเพียงแค่ approximation เท่านั้น
+
+\section{Orbital-free DFT}
+
+พลังงานของระบบสามารถเขียนเป็นสมการง่าย ๆ ได้ดังนี้
+
+\begin{equation}
+    E[\rho] = T_{s}[\rho] + W[\rho] - \int d^{3} r V(r,R_{I}) \rho(r)
+\end{equation}
+
+\noindent $T[\rho]$ คือพลังงานจลน์, $W[\rho]$ คือพลังงานของอันตรกิริยาระหว่างอิเล็กตรอน
+(exact electron-electron interaction energy) ซึ่งมีหน้าตาดังนี้
+
+\begin{gather}
+    T[\rho] = -\sum_{i} \mel{\psi}{\nabla^{2}_{i}}{\psi} \\
+    W[\rho] = \int \frac{\rho(r)\rho(r)'}{|r-r'|} d^{3} r d^{3} r' + E_{XC}(\rho)
+\end{gather}
+
+เทอมที่เราไม่รู้นั้นก็คือ $T[\rho]$ และ  $E_{XC}(\rho)$ แต่ว่าเรามี approximation สำหรับทั้งสองเทอมนี้
+(อย่างไรก็ตาม approximation ของ $T[\rho]$ ที่เรามีนั้นก็ไม่ค่อยดีเท่าไหร่)
+
+สมการด้านบนนี้เป็นของวิธีที่เรียกว่า density-only DFT ก็คือเป็น DFT ที่ขึ้นอยู่กับ density เท่านั้น
+หรือมีชื่อเรียกอีกอย่างในวงการว่า orbital-free DFT ซึ่งให้ผลการคำนวณที่ไม่ถูกต้องเลย
+
+\section{Kohn-Sham DFT}
+
+ลำดับถัดมาคือเป็น DFT scheme อันนึงที่ถูกเสนอโดย Kohn กับ Sham ซึ่งเขาทั้งสองคนนั้นมี assumption
+ว่าจริง ๆ แล้วจะมีระบบที่อิเล็กตรอนไม่ขึ้นต่อกัน (non-interaction system) ที่สามารถมี density
+ที่ถูกต้องได้ (และระบบที่มี density ถูกต้องนั้นก็จะให้ค่าพลังงานของระบบที่ถูกต้องด้วยเช่นกัน)
+
+สำหรับ non-interaction system นั้น เราจะเริ่มจาก Slater determinant ของ wavefunction
+ก่อน ดังนี้
+
+\begin{equation}
+    \Psi_{KS} = det[\phi_{1,KS}, \phi_{2,KS}, \dots, \phi_{N,KS}]
+\end{equation}
+
+\noindent และมี density คือ
+
+\begin{equation}
+    \rho(r) = \sum^{N}_{n=1} \psi_{n,KS}^{\ast}(r) \psi_{n,KS}(r)
+\end{equation}
+
+\noindent ซึ่งเราสามารถสร้าง Kohn-Sham equation โดยใช้ Kohn-Sham orbitals ได้ ดังนี้ 
