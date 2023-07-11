@@ -23,11 +23,11 @@
 โดย Position นั้นไม่จำเป็นที่ต้องรู้แบบเป๊ะ ๆ ก็ได้แต่ว่าควรจะต้องเป็นพิกัดที่สมเหตุสมผลเพราะว่าเราสามารถทำการปรับ
 geometry ของโมเลกุลทีหลังได้ แล้วก็ exact wavefunction ของระบบหลายอิเล็กตรอนนั้นไม่สามารถแก้ได้
 ดังนั้นเราจึงจำเป็นที่จะต้องใช้การประมาณหรือ approximations หลาย ๆ อันเข้ามาช่วย นอกจากนี้เรายังใช้หลักการผันแปร
-(variational principle) ด้วยเพื่อช่วยในการหา trial wavefunction ที่ดีที่สุดจาก Function class
+(variational principle) ด้วยเพื่อช่วยในการหา trial wavefunction ที่ดีที่สุดจาก function class
 
 Variational principle ก็คือ ยิ่ง trial function นั้นเข้าใกล้ true wavefunction มากเท่าไหร่
 พลังงานรวมของระบบหรือ Energy expectation value เราจะยิ่งมีค่าต่ำลงเท่านั้น หรือถ้าตีความง่าย ๆ
-ก็คือพลังงานของ trial wavefunction นั้นจะไม่มีทางที่จะต่ำไปว่าพลังงานของ True wavefunction ได้
+ก็คือพลังงานของ trial wavefunction นั้นจะไม่มีทางที่จะต่ำไปว่าพลังงานของ true wavefunction ได้
 
 สำหรับการพิสูจน์ของ variational principle นั้นสามารถหาอ่านรายละเอียดได้ตามหนังสือ electronic
 structure
@@ -38,12 +38,12 @@ structure
 
 เราสามารถเขียน wavefunction ได้ในรูปฟังก์ชันของผลคูณแบบ anti-symmetric ได้นั่นก็คือ Slater determinant
 โดยองค์ประกอบสำคัญของ Slater determinant ก็คื atomic orbital ซึ่งในเบื้องต้นนั้นเราจะทำการ ignore
-สปินออกไปก่อนเพื่อความง่ายในการอธิบาย โดยเราจะทำการ assume ว่าสถานะหรือ State ทั้งหมดนั้นจะเป็นแบบ
-Doubly occupied ก็คือจำนวนอิเล็กตรอนทั้งหมดของระบบนั้นเท่ากับ $2N!$ แล้วก็ Atomic orbital
+สปินออกไปก่อนเพื่อความง่ายในการอธิบาย โดยเราจะทำการ assume ว่าสถานะหรือ state ทั้งหมดนั้นจะเป็นแบบ
+doubly occupied ก็คือจำนวนอิเล็กตรอนทั้งหมดของระบบนั้นเท่ากับ $2N!$ แล้วก็ atomic orbital
 นั้นเป็น orthonormal (orthogonal + normality)
 
 ในการปฏิบัตินั้นการแก้สมการ Hartree-Fock หรือ HF equation ยังไม่สามารถแก้ออกมาได้แบบถูกต้อง 100\%
-เนื่องจากว่าการคำนวณที่เกี่ยวข้องกับ Wavefunction นั้นยังต้องมีการใช้ Numerical representation เข้ามาช่วย
+เนื่องจากว่าการคำนวณที่เกี่ยวข้องกับ Wavefunction นั้นยังต้องมีการใช้ numerical representation เข้ามาช่วย
 
 จริง ๆ แล้ว atomic orbitals นั้นก็คือ wavefunction นั่นเอง โดยเราสามารถเขียน Wavefunction
 ได้โดยใช้ฟังก์ชันทางคณิตศาสตร์ที่เรียกว่า basis function ซึ่งจริง ๆ แล้วเราจะใช้ฟังก์ชันอะไรก็ได้มาเป็น
