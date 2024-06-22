@@ -19,77 +19,77 @@
     \end{aligned}
 \end{equation}
 
-สำหรับสมการข้างต้นนี้เราจำเป็นที่จะต้องรู้ atomic type แล้วก็พิกัดหรือตำแหน่งของอะตอม (นิวเคลียส)
+สำหรับสมการข้างต้นนี้เราจำเป็นที่จะต้องรู้ Atomic type แล้วก็พิกัดหรือตำแหน่งของอะตอม (นิวเคลียส)
 โดย Position นั้นไม่จำเป็นที่ต้องรู้แบบเป๊ะ ๆ ก็ได้แต่ว่าควรจะต้องเป็นพิกัดที่สมเหตุสมผลเพราะว่าเราสามารถทำการปรับ
-geometry ของโมเลกุลทีหลังได้ แล้วก็ exact wavefunction ของระบบหลายอิเล็กตรอนนั้นไม่สามารถแก้ได้
-ดังนั้นเราจึงจำเป็นที่จะต้องใช้การประมาณหรือ approximations หลาย ๆ อันเข้ามาช่วย นอกจากนี้เรายังใช้หลักการผันแปร
-(variational principle) ด้วยเพื่อช่วยในการหา trial wavefunction ที่ดีที่สุดจาก function class
+geometry ของโมเลกุลทีหลังได้ แล้วก็ Exact Wavefunction ของระบบหลายอิเล็กตรอนนั้นไม่สามารถแก้ได้
+ดังนั้นเราจึงจำเป็นที่จะต้องใช้การประมาณหรือ Approximations หลาย ๆ อันเข้ามาช่วย นอกจากนี้เรายังใช้หลักการผันแปร
+(Variational Principle) ด้วยเพื่อช่วยในการหา trial Wavefunction ที่ดีที่สุดจาก Function class
 
-Variational principle ก็คือ ยิ่ง trial function นั้นเข้าใกล้ true wavefunction มากเท่าไหร่
+Variational Principle ก็คือ ยิ่ง trial Function นั้นเข้าใกล้ true Wavefunction มากเท่าไหร่
 พลังงานรวมของระบบหรือ Energy expectation value เราจะยิ่งมีค่าต่ำลงเท่านั้น หรือถ้าตีความง่าย ๆ
-ก็คือพลังงานของ trial wavefunction นั้นจะไม่มีทางที่จะต่ำไปว่าพลังงานของ true wavefunction ได้
+ก็คือพลังงานของ trial Wavefunction นั้นจะไม่มีทางที่จะต่ำไปว่าพลังงานของ true Wavefunction ได้
 
-สำหรับการพิสูจน์ของ variational principle นั้นสามารถหาอ่านรายละเอียดได้ตามหนังสือ electronic
+สำหรับการพิสูจน์ของ Variational Principle นั้นสามารถหาอ่านรายละเอียดได้ตามหนังสือ Electronic
 structure
 
-สรุปหลักการ variational ก็คือ ยิ่งพลังงานต่ำยิ่งดีเพราะว่าเรายิ่งได้ wavefunction ที่ถูถต้องมากขึ้น
+สรุปหลักการ Variational ก็คือ ยิ่งพลังงานต่ำยิ่งดีเพราะว่าเรายิ่งได้ Wavefunction ที่ถูถต้องมากขึ้น
 
 \section{สมการ Hartree=Fock}
 
-เราสามารถเขียน wavefunction ได้ในรูปฟังก์ชันของผลคูณแบบ anti-symmetric ได้นั่นก็คือ Slater determinant
-โดยองค์ประกอบสำคัญของ Slater determinant ก็คื atomic orbital ซึ่งในเบื้องต้นนั้นเราจะทำการ ignore
-สปินออกไปก่อนเพื่อความง่ายในการอธิบาย โดยเราจะทำการ assume ว่าสถานะหรือ state ทั้งหมดนั้นจะเป็นแบบ
-doubly occupied ก็คือจำนวนอิเล็กตรอนทั้งหมดของระบบนั้นเท่ากับ $2N!$ แล้วก็ atomic orbital
-นั้นเป็น orthonormal (orthogonal + normality)
+เราสามารถเขียน Wavefunction ได้ในรูปฟังก์ชันของผลคูณแบบ anti-symmetric ได้นั่นก็คือ Slater Determinant
+โดยองค์ประกอบสำคัญของ Slater Determinant ก็คื Atomic Orbital ซึ่งในเบื้องต้นนั้นเราจะทำการ ignore
+สปินออกไปก่อนเพื่อความง่ายในการอธิบาย โดยเราจะทำการ Assume ว่าสถานะหรือ State ทั้งหมดนั้นจะเป็นแบบ
+Doubly Occupied ก็คือจำนวนอิเล็กตรอนทั้งหมดของระบบนั้นเท่ากับ $2N!$ แล้วก็ Atomic Orbital
+นั้นเป็น Orthonormal (Orthogonal + Normality)
 
-ในการปฏิบัตินั้นการแก้สมการ Hartree-Fock หรือ HF equation ยังไม่สามารถแก้ออกมาได้แบบถูกต้อง 100\%
-เนื่องจากว่าการคำนวณที่เกี่ยวข้องกับ Wavefunction นั้นยังต้องมีการใช้ numerical representation เข้ามาช่วย
+ในการปฏิบัตินั้นการแก้สมการ Hartree-Fock (HF Equation) ยังไม่สามารถแก้ออกมาได้แบบถูกต้อง 100\%
+เนื่องจากว่าการคำนวณที่เกี่ยวข้องกับ Wavefunction นั้นยังต้องมีการใช้ Numerical Representation เข้ามาช่วย
 
-จริง ๆ แล้ว atomic orbitals นั้นก็คือ wavefunction นั่นเอง โดยเราสามารถเขียน Wavefunction
-ได้โดยใช้ฟังก์ชันทางคณิตศาสตร์ที่เรียกว่า basis function ซึ่งจริง ๆ แล้วเราจะใช้ฟังก์ชันอะไรก็ได้มาเป็น
-basis function แต่ฟังก์ชันที่ได้รับความนิยมและมีความสมเหตุสมผลนั้นก็คือฟังก์ชัน Gaussian
-เพราะว่าเป็นฟังก์ชันทางคณิตศาสตร์ที่มีคุณสมบัติหลาย ๆ อย่างตรงกับพฤติกรรม (behavior) ของ wavefunction
+จริง ๆ แล้ว Atomic Orbitals นั้นก็คือ Wavefunction นั่นเอง โดยเราสามารถเขียน Wavefunction
+ได้โดยใช้ฟังก์ชันทางคณิตศาสตร์ที่เรียกว่า Basis Function ซึ่งจริง ๆ แล้วเราจะใช้ฟังก์ชันอะไรก็ได้มาเป็น
+Basis Function แต่ฟังก์ชันที่ได้รับความนิยมและมีความสมเหตุสมผลนั้นก็คือฟังก์ชัน Gaussian
+เพราะว่าเป็นฟังก์ชันทางคณิตศาสตร์ที่มีคุณสมบัติหลาย ๆ อย่างตรงกับพฤติกรรม (behavior) ของ Wavefunction
 แล้วก็มีพารามิเตอร์ที่สามารถปรับค่าได้
 
-โดยปกติแล้ว basis function นั้นจะถูกกำหนดให้มีจุดศูนย์กลางอยู่ที่อะตอม (centered on atom)
-ทีนี้เราก็ทำการยัด atomic orbital (wavefunction) ที่เราใช้ basis function เข้าไปใน Slater
-determinant แล้วก็เอาใส่เข้าไปใน variation equation (หรือสมการ Schrodinger)
-แล้วก็เราใช้ math นิดหน่อยในการจัดรูปสมการแล้วเราก็จะได้สมการ Roothaan-Hall (R-H) ดังนี้
+โดยปกติแล้ว Basis Function นั้นจะถูกกำหนดให้มีจุดศูนย์กลางอยู่ที่อะตอม (Centered on Atom)
+ทีนี้เราก็ทำการยัด Atomic Orbital (Wavefunction) ที่เราใช้ Basis Function เข้าไปใน Slater
+Determinant แล้วก็เอาใส่เข้าไปใน Variation Equation (หรือสมการ Schr\"{o}dinger)
+แล้วก็เราใช้คณิตศาสตร์นิดหน่อยในการจัดรูปสมการแล้วเราก็จะได้สมการ Roothaan-Hall (R-H) ดังนี้
 
 \begin{equation}
     FC = \epsilon SC
 \end{equation}
 
-โดยที่ $C$ คือเมทริกซ์ที่เก็บค่าสัมประสิทธิ์ของ molecular orbitals เอาไว้ แล้วก็ $F$ คือ Fock matrix
-ซึ่งก็จะเป็นตัวแทนของ Hamiltonian ส่วน $S$ ก็คือ Overlap matrix
+โดยที่ $C$ คือเมทริกซ์ที่เก็บค่าสัมประสิทธิ์ของ Molecular Orbitals เอาไว้ แล้วก็ $F$ คือ Fock Matrix
+ซึ่งก็จะเป็นตัวแทนของ Hamiltonian ส่วน $S$ ก็คือ Overlap Matrix
 
 สมการ R-H นั้นมีความซับซ้อนระดับนึงจึงทำให้การแก้สมการนั้นทำได้ยาก แต่ว่านักวิทยาศาสตร์ก็หาวิธีจะได้
-ประเด็นก็คือการแก้สมการ R-H นั้นมันมีตัวที่เป็นปัญหาก็คือ Fock matrix ซึ่งจะมีการคำนวณ one-electron
-และ two-electron integral เข้ามาเกี่ยวข้องซึ่งเป็นการ integral ของฟังก์ชัน 4 อันคูณกัน
-(มีทั้งหมด 6 มิติ) ดังนั้นถ้าหากเรามีจำนวน Basis function ทั้งหมด $N$ ฟังก์ชัน
+ประเด็นก็คือการแก้สมการ R-H นั้นมันมีตัวที่เป็นปัญหาก็คือ Fock Matrix ซึ่งจะมีการคำนวณ One-Electron
+และ two-Electron Integral เข้ามาเกี่ยวข้องซึ่งเป็นการ Integral ของฟังก์ชัน 4 อันคูณกัน
+(มีทั้งหมด 6 มิติ) ดังนั้นถ้าหากเรามีจำนวน Basis Function ทั้งหมด $N$ ฟังก์ชัน
 การคำนวณนั้นจะมีความซับซ้อนถึง $M^{4}$ เลยทีเดียว ซึ่งเราไม่สามารถแบบตรงไปตรงมาได้
 
-เริ่มต้นเลยคือเราจะทำการกำหนด initial guess หรือ $C$ matrix เริ่มต้นขึ้นมาก่อนแล้วก็ทำการแก้หา
-Fock matrix โดยใช้ guess matrix อันนี้ หลังจากนั้นจึงเป็นการแก้สมการ R-H แล้วก็หา $C$ matrix
-อันใหม่ออกมา แล้วก็ทำแบบนี้วนไปเรื่อย ๆ เราเรียกวิธีการแบบนี้ว่า self-consistent loop
+เริ่มต้นเลยคือเราจะทำการกำหนด initial Guess หรือ $C$ Matrix เริ่มต้นขึ้นมาก่อนแล้วก็ทำการแก้หา
+Fock Matrix โดยใช้ Guess Matrix อันนี้ หลังจากนั้นจึงเป็นการแก้สมการ R-H แล้วก็หา $C$ Matrix
+อันใหม่ออกมา แล้วก็ทำแบบนี้วนไปเรื่อย ๆ เราเรียกวิธีการแบบนี้ว่า Self-Consistent Loop
 
-\section{Basis functions}
+\section{Basis Functions}
 
-ปัญหาถัดไปก็คือ basis function!! จริง ๆ แล้วมีวิธีหลาย ๆ อันมาก ๆ ที่เราสามารถใช้ในการสร้างหรือกำหนด
-basis function ขึ้นมาได้แต่ว่าวิธีที่ง่ายที่สุดนั้นก็คือใช้ Slater function เป็น basis function
+ปัญหาถัดไปก็คือ Basis Function!! จริง ๆ แล้วมีวิธีหลาย ๆ อันมาก ๆ ที่เราสามารถใช้ในการสร้างหรือกำหนด
+Basis Function ขึ้นมาได้แต่ว่าวิธีที่ง่ายที่สุดนั้นก็คือใช้ Slater Function เป็น Basis Function
 
-HF theory และ basis function นั้นเป็นตัวที่ทำให้เกิด limit ของ accuracy ของการคำนวณ ถ้า Basis
-function ที่ใช้นั้นดีแล้วก็ไม่ทำให้เกิด error ใด ๆ เลยนั้นจะกลายเป็นว่า accuracy นั้นจะมี limitation
-ที่ถูกจำกัดด้วย HF theory เท่านั้น สำหรับปัญหาที่เป็นที่ทราบกันดีนั้นก็คือปริมาณบางอย่างที่ได้จากการคำนวณด้วย HF
-นั้นไม่ถูกต้องและคลาดเคลื่อนไปเยอะ เช่น พลังงานการยึดเหนี่ยว (binding energies) แต่ว่าก็มีปริมาณ 
-เช่น ความยาวพันธะ (bond distance) ที่ HF ค่อนข้างให้ผลการคำนวณที่ถูกต้อง
+HF Theory และ Basis Function นั้นเป็นตัวที่ทำให้เกิด Limit ของ Accuracy ของการคำนวณ ถ้า Basis
+Function ที่ใช้นั้นดีอยู่แล้วก็ไม่ทำให้เกิด Error ใด ๆ เลยนั้นจะกลายเป็นว่า Accuracy นั้นจะมี Limitation
+ที่ถูกจำกัดด้วย HF Theory เท่านั้น สำหรับปัญหาที่เป็นที่ทราบกันดีนั้นก็คือปริมาณบางอย่างที่ได้จากการคำนวณด้วย HF
+นั้นไม่ถูกต้องและคลาดเคลื่อนไปเยอะ เช่น พลังงานการยึดเหนี่ยว (Binding Energies) แต่ว่าก็มีปริมาณ 
+เช่น ความยาวพันธะ (Bond Distance) ที่ HF ค่อนข้างให้ผลการคำนวณที่ถูกต้อง
 
-สำหรับการคำนวณปริมาณอื่น ๆ ก็เช่น HF นั้นจะ overestimate ค่า frequencies ประมาณ 10\% แต่เราก็สามารถใช้
-scaling factor มาทำ correction ได้ อย่างไรก็ตามถ้าพูดกันแบบแฟร์ ๆ ก็คือ vibrational frequencies
-เป็นปริมาณที่คำนวณได้ค่อนข้างยากเพราะว่ามันเป็นปริมาณที่ based on ผลต่างของระดับพลังงานที่เล็กมาก ๆ
+สำหรับการคำนวณปริมาณอื่น ๆ ก็เช่น HF นั้นจะ overestimate ค่า Frequencies ประมาณ 10\% แต่เราก็สามารถใช้
+Scaling Factor มาทำ Correlation ได้ อย่างไรก็ตามถ้าพูดกันแบบแฟร์ ๆ ก็คือ Vibrational Frequencies
+เป็นปริมาณที่คำนวณได้ค่อนข้างยากเพราะว่าจะขึ้นอยู่กับผลต่างของระดับพลังงานที่เล็กมาก ๆ
 
 \section{สรุป}
 
-วิธี HF (แบบ unrestricted) นั้นเป็นวิธีพื้นฐาน (basis) ของ quantum chemical methods ซึ่งวิธี HF
+วิธี HF (แบบ Unrestricted) นั้นเป็นวิธีพื้นฐาน (Basis) ของ Quantum Chemical Methods ซึ่งวิธี HF
 เองนั้นให้ผลการคำนวณที่ไม่ถูกต้องดังนั้นสำหรับการคำนวณทางเคมีควอนตัมที่ต้องการความแม่นยำนั้นเราจะใช้วิธี
 Post-HF แทน
