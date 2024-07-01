@@ -32,7 +32,7 @@ single Slater Determinant มารวมกับสิ่งที่เรี
 
 พาร์ทที่น่าสนใจและเป็นปัญหามากที่สุดมาจนถึงปัจจุบันนั้นก็คือ Exchange-Correlation Energy 
 (Exchange = แลกเปลี่ยน และ Correlation = สหสัมพันธ์, เรียกสั้น ๆ ว่า XC)  เพราะว่า 
-ณ ปัจจุบันนี้ยังไม่มีใครสามารถหาหน้าตาที่เป็น Exact solution ของเทอม XC นี้ได้ ซึ่งฟังก์ชันนอล XC 
+ณ ปัจจุบันนี้ยังไม่มีใครสามารถหาหน้าตาที่เป็น Exact Solution ของเทอม XC นี้ได้ ซึ่งฟังก์ชันนอล XC 
 ที่มีให้เราเลือกใช้กันตามโปรแกรมเคมีคำนวณต่าง ๆ ในปัจจุบันนี้เป็นเพียงแค่ Approximation เท่านั้น
 
 \section{Orbital-free DFT}
@@ -54,14 +54,14 @@ single Slater Determinant มารวมกับสิ่งที่เรี
 เทอมที่เราไม่รู้นั้นก็คือ $T[\rho]$ และ  $E_{XC}(\rho)$ แต่ว่าเรามี Approximation สำหรับทั้งสองเทอมนี้
 (อย่างไรก็ตาม Approximation ของ $T[\rho]$ ที่เรามีนั้นก็ไม่ค่อยให้ผลการคำนวณที่ถูกต้องเท่าไหร่)
 
-สมการด้านบนนี้เป็นของวิธีที่เรียกว่า density-only DFT ก็คือเป็น DFT ที่ขึ้นอยู่กับ density เท่านั้น
+สมการด้านบนนี้เป็นของวิธีที่เรียกว่า Density-only DFT ก็คือเป็น DFT ที่ขึ้นอยู่กับ Density เท่านั้น
 หรือมีชื่อเรียกอีกอย่างในวงการว่า Orbital-free DFT ซึ่งให้ผลการคำนวณที่ไม่ถูกต้องเลย
 
 \section{Kohn-Sham DFT}
 
-ลำดับถัดมาคือเป็น DFT Scheme อันนึงที่ถูกเสนอโดย Kohn กับ Sham ซึ่งเขาทั้งสองคนนั้นมี assumption
-ว่าจริง ๆ แล้วจะมีระบบที่อิเล็กตรอนไม่ขึ้นต่อกัน (Non-Interaction System) ที่สามารถมี density
-ที่ถูกต้องได้ (และระบบที่มี density ถูกต้องนั้นก็จะให้ค่าพลังงานของระบบที่ถูกต้องด้วยเช่นกัน)
+ลำดับถัดมาคือเป็น DFT Scheme อันนึงที่ถูกเสนอโดย Kohn กับ Sham ซึ่งเขาทั้งสองคนนั้นมี Assumption
+ว่าจริง ๆ แล้วจะมีระบบที่อิเล็กตรอนไม่ขึ้นต่อกัน (Non-Interaction System) ที่สามารถมี Density
+ที่ถูกต้องได้ (และระบบที่มี Density ถูกต้องนั้นก็จะให้ค่าพลังงานของระบบที่ถูกต้องด้วยเช่นกัน)
 
 สำหรับ Non-Interaction System นั้น เราจะเริ่มจาก Slater Determinant ของ Wavefunction
 ก่อน ดังนี้
@@ -70,7 +70,7 @@ single Slater Determinant มารวมกับสิ่งที่เรี
     \Psi_{KS} = det[\phi_{1,KS}, \phi_{2,KS}, \dots, \phi_{N,KS}]
 \end{equation}
 
-\noindent และมี density คือ
+\noindent และมี Density คือ
 
 \begin{equation}
     \rho(r) = \sum^{N}_{n=1} \psi_{n,KS}^{\ast}(r) \psi_{n,KS}(r)
@@ -125,7 +125,7 @@ single Slater Determinant มารวมกับสิ่งที่เรี
 
 \subsection{LDA}
 
-Approximation อันแรกเลยที่ถูกพัฒนาขึ้นคือ Local density Approximation (LDA) ซึ่งสามารถคำนวณพลังงานรวม%
+Approximation อันแรกเลยที่ถูกพัฒนาขึ้นคือ Local Density Approximation (LDA) ซึ่งสามารถคำนวณพลังงานรวม%
 ของระบบ homogeneous Electron gas ได้แม่นยำระดับหนึ่งเลยทีเดียว ซึ่งเรารู้ $E_{XC, homog}(\rho)$
 นั่นเอง
 
@@ -183,8 +183,8 @@ Scaling ของ GGA ก็ดีด้วย ประมาณ $N^{3}$ เท
 
 \subsection{Meta-GGA}
 
-Meta-GGA Functional คือเป็นการยกระดับ GGA ขึ้นมาโดยการใช้ข้อมูลของอนุพันธ์อันดับ 2 ของความหนาแน่น (second 
-derivative of the density) และ/หรือ Kinetic Energy density เข้ามาช่วยด้วย 
+Meta-GGA Functional คือเป็นการยกระดับ GGA ขึ้นมาโดยการใช้ข้อมูลของอนุพันธ์อันดับ 2 ของความหนาแน่น (Second 
+Derivative of the Density) และ/หรือ Kinetic Energy Density เข้ามาช่วยด้วย 
 
 Meta-GGA Functional เช่น TPSS, M06-L, rev-TPSS, แล้วก็ SCAN ให้ผลการคำนวณที่ถูกต้องกว่า GGA 
 เพราะว่ามันสามารถ treat ประเภทของพันธะเคมีในโมเลกุลที่แตกต่างกันได้ เช่น Covalent Bond, metallic Bond, 
@@ -222,7 +222,7 @@ GGA < GGA + dispersion Correlation
 มันจะสัมผัสหรือ Feel ได้ถึงตัวเอง ซึ่งกลายเป็นมันมี Error ที่เกิดจาก Interaction ระหว่างอิเล็กตรอนตัวมันเอง 
 ดังนั้นการแก้ปัญหาดังกล่าวก็คือการตัดหรือลบ Orbital ที่ขึ้นอยู่กับ Self-Interaction ออกไป 
 
-โดยการทำ Correlation แบบนี้นั้นมีความซับซ้อนมากเพราะว่ามันเกี่ยวข้องกับ Orbital แทนที่จะเป็น density 
+โดยการทำ Correlation แบบนี้นั้นมีความซับซ้อนมากเพราะว่ามันเกี่ยวข้องกับ Orbital แทนที่จะเป็น Density 
 ซึ่งกลายเป็นว่าการที่เราแบบนี้มันทำให้ทฤษฎีอันนี้มันไม่ใช่ DFT อีกต่อไปแล้ว นอกจากนี้ยังมีปัญหาอื่น ๆ ตามมาอีก เช่น 
 ปัญหาทางด้านการคำนวณเพราะว่าการใช้ Self-Interaction Correlation นั้นมันทำให้การ Converge 
 ของพลังงานนั้นยากขึ้น (ค่าพลังงานที่ได้ออกจากจึงไม่ถูกต้อง)
