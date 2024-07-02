@@ -38,15 +38,15 @@ Excited States ได้ด้วย (มี Configuration เพิ่มขึ
 เท่านั้น) แล้วเราก็คำนวณอันตรกิริยาระหว่าง Configurations ทั้งหมดซึ่งก็คือ Interaction ดังนี้วิธีนี้จึงเรียกว่า
 Configuration Interaction นั่นเอง
 
-สำหรับการ interpret notation ของ $\Psi^{a}_{i}$ นั้นก็คือ Wavefunction อันนี้อธิบายอิเล็กตรอน 1
-ตัวที่ถูกกระตุ้นจาก State $i$ ไปยัง State $a$
+สำหรับการตีความ (Interpret) สัญกรณ์ (Notation) ของ $\Psi^{a}_{i}$ นั้นก็คือ Wavefunction 
+อันนี้อธิบายอิเล็กตรอน 1 ตัวที่ถูกกระตุ้นจาก State $i$ ไปยัง State $a$
 
 ส่วน $\Psi^{ab}_{ij}$ นั้นก็เหมือนกันคือเป็น Wavefunction ที่อธิบายอิเล็กตรอน 2 ตัวถูกกระตุ้นจาก
 State $i$ กับ $j$ ไปยัง State $a$ กับ $b$ โดยเราจะเรียก Wavefunction อันนี้ว่า CISD (CI ที่มี Singlet
 and Doublet Excitations) ส่วน $\Psi^{0}$ นั้นก็คือ Slater Determinant (หรือ HF Wavefunction)
 นั่นเอง
 
-ในการคำนวณของวิธี CI นั้น เราจะคอย keep ให้ HF Orbitals นั้นคงที่ (ไม่มีการเปลี่ยรแปลง) ส่วนตัวที่เรา%
+ในการคำนวณของวิธี CI นั้น เราจะพยายามทำให้ HF Orbitals นั้นคงที่ตลอดเวลา (ไม่มีการเปลี่ยนแปลง) ส่วนตัวที่เรา%
 จะทำการ Optimize นั่นก็คือ Coefficient $a$ โดยเมื่อเรานำ Variational Principle เข้ามาใช้นั้นจะได้ว่า
 
 \begin{equation}
@@ -89,7 +89,7 @@ Excitation ทั้งหมดที่เป็นไปได้เข้า
 ถ้าสมมติว่าระบบเรามีจำนวน 10 Electrons ($k = 10$) จำนวนของ $N_{det}$ จะเท่ากับ $3.4 \times 10^{10}$
 ซึ่งมันเป็นไปไม่ได้เลยที่จะคำนวณได้จริง ๆ
 
-วิธีที่ใช้ในการคำนวณ Correlation Energy นั้นก็จะมี Computational scaling ที่แตกต่างกันออกไปแต่ส่วนใหญ่%
+วิธีที่ใช้ในการคำนวณ Correlation Energy นั้นก็จะมี Computational Scaling ที่แตกต่างกันออกไปแต่ส่วนใหญ่%
 ก็มักจะสิ้นเปลืองทั้งนั้น แต่ในปัจจุบันเรามีโปรแกรม เช่น ORCA, Turbomole, Molcas, Molpro หรืออื่น ๆ
 ที่ทำให้เราสามารถใช้วิธีเหล่านี้กับโมเลกุลที่มีขนาดใหญ่มากขึ้นได้แล้วก็สามารถทำได้ในเชิงปฏิบัติ (Practically Possible)
 โดยเฉพาะกับวิธี MP2 และ CCSD(T) ที่สามารถถูกทำให้มีความสิ้นเปลืองของการคำนวณเทียบเท่าหรือพอ ๆ กับวิธี HF
@@ -129,7 +129,7 @@ Active Space SCF เป็นอีกวิธีหนึ่งสำหรั
 
 นอกจากนี้แล้วเรายังสามารถทำการ Optimize ออร์บิทัลสำหรับ Excitation แต่ละอันได้ด้วยซึ่งเราเรียก%
 กระบวนการนี้ว่า Multi Reference Method (MRSCF)\footnote{สำหรับวิธี CI นั้นออร์บิทัลจะไม่ถูก 
-Optimized นะ} นี่จึงทำให้การคำนวณ total Electronic Energy ด้วยวิธี Active Space SCF
+Optimized นะ} นี่จึงทำให้การคำนวณ Total Electronic Energy ด้วยวิธี Active Space SCF
 นั้นมีความถูกต้องและแม่นยำสูงมาก
 
 โดยปกติแล้ววิธี CAS นั้นใช้ไม่ค่อยง่ายเท่าไหร่โดยเฉพาะสำหรับมือใหม่ที่เพิ่งเริ่มศึกษาเคมีคำนวณ
